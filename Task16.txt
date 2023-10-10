@@ -1,0 +1,15 @@
+﻿// Taking the string as an input that we want to reverse
+Console.WriteLine("Enter a string to reverse: ");
+string word = Console.ReadLine();
+
+// Reverse the string
+
+string inverse = "";
+for (int i = word.Length - 1; i >= 0; i--)
+{
+    // the letter of that string will be added to that empty string in the reverse direction
+    inverse += word[i];
+}
+// Final result when the string is reversed
+
+Console.WriteLine("The reversed string word: " + inverse);
