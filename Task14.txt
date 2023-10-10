@@ -1,0 +1,13 @@
+﻿// Program to print the asterisk pattern in right angle triangle by taking input from the user
+Console.WriteLine("Enter the height of the triangle: ");
+int h = int.Parse(Console.ReadLine());
+
+// The first loop will determine the number of rows and second loop will determine the number of *
+for (int i = 0; i < h; i++)
+{
+    for (int j = 0; j <= i; j++)
+    {
+        Console.Write("*");
+    }
+    Console.WriteLine();
+}
