@@ -1,0 +1,32 @@
+﻿// Program to check if the word is a palindrome or not
+
+// Taking word from the user as input
+Console.Write("Enter a word: ");
+
+// Initializing an empty string 
+string value = Console.ReadLine();
+string inverse = "";
+
+// Loop will run in the reverse manner
+for (int i = value.Length - 1; i >= 0; i--)
+
+// The value will be added into the inverse string which was empty
+{
+   inverse += value[i];
+}
+
+// Checking that if the inverse word is equal to palindrom using the equals method
+bool Palindrome = value.Equals(inverse);
+
+// Condtition that if word is a palindrome so that word can be printed
+if  (Palindrome)
+{
+    Console.Write("This word is a Palindrome ");
+}
+else
+{
+    Console.Write("This word is not a Palindrome");
+}
+
+
+
