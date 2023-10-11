@@ -1,0 +1,45 @@
+﻿// Program to find the longest common subsequence (LCS)
+
+        {
+            Console.WriteLine("Enter the first string: ");
+            string s1 = Console.ReadLine();
+
+            Console.WriteLine("Enter the second string: ");
+            string s2 = Console.ReadLine();
+
+            int[,] dp = new int[s1.Length + 1, s2.Length + 1];
+
+            for (int i = 1; i <= s1.Length; i++)
+            {
+                for (int j = 1; j <= s2.Length; j++)
+                {
+                    if (s1[i - 1] == s2[j - 1])
+                        dp[i, j] = dp[i - 1, j - 1] + 1;
+                    else
+                        dp[i, j] = Math.Max(dp[i - 1, j], dp[i, j - 1]);
+                }
+            }
+
+            int len = dp[s1.Length, s2.Length];
+            char[] lcs = new char[len];
+            int m = s1.Length, n = s2.Length;
+
+            while (m > 0 && n > 0)
+            {
+                if (s1[m - 1] == s2[n - 1])
+                {
+                    lcs[--len] = s1[m - 1];
+                    m--;
+                    n--;
+                }
+                else if (dp[m - 1, n] > dp[m, n - 1])
+                    m--;
+                else
+                    n--;
+            }
+
+            string longestCommonSubsequence = new string(lcs);
+
+            Console.WriteLine("The longest common subsequence is: " + longestCommonSubsequence);
+        }
+  
