@@ -1,0 +1,29 @@
+﻿// Program that prints the following pattern up to n rows        
+
+
+// Taking input from the user
+          
+Console.WriteLine("Enter the number of lines: ");
+         
+// Converting string into integer data type
+          
+int n = int.Parse(Console.ReadLine());
+          
+// A loop is created with variable i for number of rows
+        
+for (int i =1; i<=n; i++)
+            
+{
+          
+// This loop for j will create the pattern of numbers 
+                
+for (int j =1; j<=i; j++)
+                
+{
+                    
+Console.Write(j);
+                
+}
+                
+Console.WriteLine();
+            
